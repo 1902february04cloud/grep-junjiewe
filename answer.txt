@@ -1,0 +1,30 @@
+Question #1
+-comment: The ^ will allow us to get the first letter of the word, add Z to 
+	  specify The letter Z
+-command: grep -"^Z" cities.txt
+
+Question #2
+-comment: metion the search condition first('gan'), then add $ at the end to 
+	  look at the end of the word 
+-command: grep -"gan$" cities.txt
+
+Question #3
+-comment: flag -c means count of result, [ADE] check matching character A or D 
+or E, ^ gives the matching word that starts at the first letter
+-command: grep -c "^[ADE]" cities.txt
+
+Question #4
+-comment: flag -c will count the match result, "\<" search the BEGGINIG of each
+WORD, '.' will take up first char of the searching, '.ar' will then be in the 
+second and third position respectively. 
+-command: grep -c "\<.ar" cities.txt (for getting the number of cities matched)
+	  grep -i "\<.ar" cities.txt (for getting the list of the cities mathed)
+
+Question #5
+-comment: flag -c will count the match result, first ^ will check the beggining
+of each line, [^C] will return all the lines that does not start with the letterC. 
+-command: grep -c ^[^C] cities.txt
+
+Question #6
+-comment: 
+-command:
