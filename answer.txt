@@ -26,5 +26,24 @@ of each line, [^C] will return all the lines that does not start with the letter
 -command: grep -c ^[^C] cities.txt
 
 Question #6
--comment: 
--command:
+-comment: -E uses egrep, [[:alpha:]] will give you alphbet, add a - to give 
+additional restriction,{14} is the char number that a word should have 
+-command:grep -E '^[[:alpha:]-]{14}' cities.txt 
+
+Question #7
+-comment: -c count the result of lines start with B
+-command: grep -c "^B" cities.txt
+
+Question #8
+-comment: -o will separate entries to a new line if there are repeated 'd's in a same line, after that, just count all the 'd's
+-command: grep -o [d] cities.txt | grep -c [d] 
+
+Question #9
+-comment: (.)\1 give the repeated char that are next to eachother, add $ at the
+end to mension end of the word.
+-command: grep -E '(.)\1$' cities.txt
+
+Question #10
+-comment: ^ start at the beginning of the line, (.)(.)\2\1 will give me a 
+palindrome like 'maam', so add a . in the middle to allow a random char to find words with 5 palindrome.  
+-command: grep -E '^(.)(.).\2\1>$' cities.txt 
